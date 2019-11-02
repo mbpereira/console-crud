@@ -1,0 +1,76 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/mateus/workspace/apps/c#/crud/crud.csproj": {}
+  },
+  "projects": {
+    "/home/mateus/workspace/apps/c#/crud/crud.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/mateus/workspace/apps/c#/crud/crud.csproj",
+        "projectName": "crud",
+        "projectPath": "/home/mateus/workspace/apps/c#/crud/crud.csproj",
+        "packagesPath": "/home/mateus/.nuget/packages/",
+        "outputPath": "/home/mateus/workspace/apps/c#/crud/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/mateus/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[4.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
