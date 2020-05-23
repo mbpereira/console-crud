@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\workspace\\projetos\\console-crud-master\\ConsoleCrud.csproj": {}
+    "D:\\workspace\\projetos\\console-crud\\ConsoleCrud.csproj": {}
   },
   "projects": {
-    "D:\\workspace\\projetos\\console-crud-master\\ConsoleCrud.csproj": {
+    "D:\\workspace\\projetos\\console-crud\\ConsoleCrud.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workspace\\projetos\\console-crud-master\\ConsoleCrud.csproj",
+        "projectUniqueName": "D:\\workspace\\projetos\\console-crud\\ConsoleCrud.csproj",
         "projectName": "ConsoleCrud",
-        "projectPath": "D:\\workspace\\projetos\\console-crud-master\\ConsoleCrud.csproj",
+        "projectPath": "D:\\workspace\\projetos\\console-crud\\ConsoleCrud.csproj",
         "packagesPath": "C:\\Users\\mateus.pereira\\.nuget\\packages\\",
-        "outputPath": "D:\\workspace\\projetos\\console-crud-master\\obj\\",
+        "outputPath": "D:\\workspace\\projetos\\console-crud\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

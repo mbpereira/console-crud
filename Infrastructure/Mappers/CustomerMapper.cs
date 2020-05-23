@@ -1,6 +1,7 @@
+using ConsoleCrud.Factories;
+using ConsoleCrud.Infrastructure.Extensions;
 using ConsoleCrud.Models;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 
 namespace ConsoleCrud.Infrastructure.Mappers
 {
@@ -14,8 +15,8 @@ namespace ConsoleCrud.Infrastructure.Mappers
 
 		public Customer FindByInd(int id)
 		{
-			using (var connection = (SqlConnection) _databaseConnection.GetConnection())
-			using (var cmd = new SqlCommand("SELECT * FROM customers WHERE id = @id", connection))
+			using (var connection = _databaseConnection.GetConnection())
+			using (var cmd = CommandFactory.CreateCommand("SELECT * FROM customers WHERE id = @id", connection))
 			using (var reader = cmd.ExecuteReader())
 			{
 				Customer customer = new Customer();
@@ -30,8 +31,8 @@ namespace ConsoleCrud.Infrastructure.Mappers
 		{
 			List<Customer> customers = new List<Customer>();
 
-			using (var connection = (SqlConnection) _databaseConnection.GetConnection())
-			using (var cmd = new SqlCommand("SELECT * FROM customers", connection))
+			using (var connection = _databaseConnection.GetConnection())
+			using (var cmd = CommandFactory.CreateCommand("SELECT * FROM customers", connection))
 			using (var reader = cmd.ExecuteReader())
 			{
 				while (reader.Read())
@@ -52,15 +53,15 @@ namespace ConsoleCrud.Infrastructure.Mappers
 
 		public bool Save(Customer customer)
 		{
-			using (var connection = (SqlConnection) _databaseConnection.GetConnection())
-			using (var cmd = new SqlCommand(
-				"INSERT INTO customers (name, email, phone) VALUES (@name, @email, @phone)",
+			using (var connection = _databaseConnection.GetConnection())
+			using (var cmd = CommandFactory.CreateCommand(
+				"INSERT INTO Customers (name, email, phone) VALUES (@name, @email, @phone)",
 				connection
 			))
 			{
-				cmd.Parameters.AddWithValue("name", customer.Name);
-				cmd.Parameters.AddWithValue("email", customer.Email);
-				cmd.Parameters.AddWithValue("phone", customer.Phone);
+				cmd.AddParameter("name", System.Data.DbType.String, customer.Name);
+				cmd.AddParameter("email", System.Data.DbType.String, customer.Email);
+				cmd.AddParameter("phone", System.Data.DbType.String, customer.Phone);
 				cmd.ExecuteNonQuery();
 			}
 			return true;
@@ -68,10 +69,10 @@ namespace ConsoleCrud.Infrastructure.Mappers
 
 		public bool Delete(int id)
 		{
-			using (var connection = (SqlConnection) _databaseConnection.GetConnection())
-			using (var cmd = new SqlCommand("DELETE FROM customers WHERE id = @id", connection))
+			using (var connection = _databaseConnection.GetConnection())
+			using (var cmd = CommandFactory.CreateCommand("DELETE FROM customers WHERE id = @id", connection))
 			{
-				cmd.Parameters.AddWithValue("id", id);
+				cmd.AddParameter("id", System.Data.DbType.String, id);
 				cmd.ExecuteNonQuery();
 			}
 			return true;
@@ -79,16 +80,16 @@ namespace ConsoleCrud.Infrastructure.Mappers
 
 		public bool Update(int id, Customer customer)
 		{
-			using (var connection = (SqlConnection) _databaseConnection.GetConnection())
-			using (var cmd = new SqlCommand(
+			using (var connection = _databaseConnection.GetConnection())
+			using (var cmd = CommandFactory.CreateCommand(
 				"UPDATE customers SET name = @name, email = @email, phone = @phone WHERE id = @id",
 				connection
 			))
 			{
-				cmd.Parameters.AddWithValue("name", customer.Name);
-				cmd.Parameters.AddWithValue("email", customer.Email);
-				cmd.Parameters.AddWithValue("phone", customer.Phone);
-				cmd.Parameters.AddWithValue("id", id);
+				cmd.AddParameter("name", System.Data.DbType.String, customer.Name);
+				cmd.AddParameter("email", System.Data.DbType.String, customer.Email);
+				cmd.AddParameter("phone", System.Data.DbType.String, customer.Phone);
+				cmd.AddParameter("id", System.Data.DbType.String, id);
 				cmd.ExecuteNonQuery();
 			}
 			return true;
