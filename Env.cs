@@ -1,26 +1,27 @@
 using Microsoft.Extensions.Configuration;
 using System.IO;
-namespace crud
+namespace ConsoleCrud
 {
     public class Env
     {
         private static Env _instance = null;
         private IConfigurationRoot _configuration;
 
-        public static Env Instance {
-            get {
-                if(_instance == null)
-                    _instance = new Env();
-                return _instance;
-            }
-        }
-
         private Env() {
-            _configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("env.json")
+			string projectPath =
+				Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+			_configuration = new ConfigurationBuilder()
+                .SetBasePath(projectPath)
+                .AddJsonFile("appsettings.json")
                 .Build();
         }
+
+		public static Env GetInstance()
+		{
+			if (_instance == null)
+				_instance = new Env();
+			return _instance;
+		}
 
         public string Get(string key) {
             return _configuration[key];

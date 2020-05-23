@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\workspace\\projetos\\console-crud-master\\crud.csproj": {}
+    "D:\\workspace\\projetos\\console-crud-master\\ConsoleCrud.csproj": {}
   },
   "projects": {
-    "D:\\workspace\\projetos\\console-crud-master\\crud.csproj": {
+    "D:\\workspace\\projetos\\console-crud-master\\ConsoleCrud.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\workspace\\projetos\\console-crud-master\\crud.csproj",
-        "projectName": "crud",
-        "projectPath": "D:\\workspace\\projetos\\console-crud-master\\crud.csproj",
+        "projectUniqueName": "D:\\workspace\\projetos\\console-crud-master\\ConsoleCrud.csproj",
+        "projectName": "ConsoleCrud",
+        "projectPath": "D:\\workspace\\projetos\\console-crud-master\\ConsoleCrud.csproj",
         "packagesPath": "C:\\Users\\mateus.pereira\\.nuget\\packages\\",
         "outputPath": "D:\\workspace\\projetos\\console-crud-master\\obj\\",
         "projectStyle": "PackageReference",
@@ -43,19 +43,19 @@
           "dependencies": {
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.4, )"
             },
             "Microsoft.Extensions.Configuration.FileExtensions": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[3.1.4, )"
             },
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
-              "version": "[3.0.0, )"
-            },
-            "Npgsql": {
-              "target": "Package",
-              "version": "[4.1.1, )"
+              "version": "[3.1.4, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",
